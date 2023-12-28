@@ -22,6 +22,12 @@ variable "tenant_id" {
   default = ""
 }
 
+variable "location" {
+  description = "location for resources."
+  type        = string
+  default     = ""
+}
+
 variable "tags" {
   description = "A map of tags to apply to resources."
   type        = "map"

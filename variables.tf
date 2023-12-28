@@ -23,13 +23,13 @@ variable "tenant_id" {
 }
 
 variable "location" {
-  description = "location for resources."
   type        = string
+  description = "location for resources."
   default     = ""
 }
 
 variable "tags" {
+  type        = map(string)
   description = "A map of tags to apply to resources."
-  type        = "map"
   default     = {}
 }

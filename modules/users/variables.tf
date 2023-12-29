@@ -1,27 +1,14 @@
-
-variable "user_principal_name" {
-  type        = string
-  description = "(required) example@yourdomain.com"
-  default     = ""
-}
-variable "user_display_name" {
-  type        = string
-  description = "(optional) Display Name"
-  default     = ""
-}
-variable "user_password" {
-  type        = string
-  description = "(optional) User temp password"
-  default     = ""
+variable "user_details" {
+  description = "User details excluding role scopes"
+  type = object({
+    display_name     = string
+    password         = string
+    principal_name   = string
+    role             = string
+  })
 }
 
-variable "user_role" {
-    type = string
-    description = "(required) User's role"
-    default = "Reader"
-}
-
-variable "user_role_scope" {
-    type = string
-    description = "(required) Scope of the role, example resource group id, subscription id..."
+variable "role_scopes" {
+  description = "List of scopes for the user role"
+  type        = list(string)
 }

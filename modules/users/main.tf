@@ -15,5 +15,7 @@ resource "azurerm_role_assignment" "user_role" {
   scope                = each.value
   role_definition_name = var.user_details.role
   principal_id         = var.user_details.principal_name
+
+  depends_on = [azuread_user.user]
 }
 

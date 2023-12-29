@@ -15,3 +15,13 @@ variable "user_password" {
   default     = ""
 }
 
+variable "user_role" {
+    type = string
+    description = "(required) User's role"
+    default = "Reader"
+}
+
+variable "user_role_scope" {
+    type = string
+    description = "(required) Scope of the role, example resource group id, subscription id..."
+}
